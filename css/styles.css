@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url(../fonts/Rubik-Regular.woff);
+}
+
+@font-face {
+    font-family: 'Nobile';
+    src: url(../fonts/Nobile-Regular.woff);
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+
+  --default-padding: 20px;
+
+  --primary-color: #003135;
+  --secondary-color: #024950;
+  --ternary-color: #964734;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  font-family: "Rubik", "Nobile";
+
+}
+
+body {
+  margin: 0;
+  margin: auto;
+  height: 100vh;
+
+  padding: var(--default-padding);
+
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 3;
+}
+
+footer {
+  background; var
+}
+
+main,
+footer {
+  text-align: center;
+}
+
+.color-theme {
+  float: right;
+}
+
+.header-main {
+    color: var(--ternary-color);
+}
