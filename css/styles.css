@@ -1,22 +1,29 @@
 @font-face {
-    font-family: 'Rubik';
-    src: url(../fonts/Rubik-Regular.woff);
+  font-family: "Rubik";
+  src: url(../fonts/Rubik-Regular.woff);
 }
 
 @font-face {
-    font-family: 'Nobile';
-    src: url(../fonts/Nobile-Regular.woff);
+  font-family: "Nobile";
+  src: url(../fonts/Nobile-Regular.woff);
 }
 
 :root {
-  --bg-color: white;
-  --text-color: black;
+  --bg-color-dark: black;
+  --bg-color-light: white;
+  --text-color-dark: white;
+  --text-color-light: black;
+
+  --color-theme-slider: rgb(194, 194, 194);
 
   --default-padding: 20px;
+  --primary-color-dark: white;
+  --primary-color-light: #003135;
 
-  --primary-color: #003135;
   --secondary-color: #024950;
-  --ternary-color: #964734;
+  --tertiary-color: #964734;
+  --quaternary-color: #0fa4af;
+  --quinary-color: #afdde5;
 }
 
 * {
@@ -26,11 +33,10 @@
 html {
   width: 100%;
   margin: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
 
   font-family: "Rubik", "Nobile";
-
 }
 
 body {
@@ -38,10 +44,15 @@ body {
   margin: auto;
   height: 100vh;
 
-  padding: var(--default-padding);
-
   display: flex;
   flex-direction: column;
+
+  color: var(--text-color-light);
+}
+
+header,
+main {
+  padding: var(--default-padding);
 }
 
 main {
@@ -49,7 +60,7 @@ main {
 }
 
 footer {
-  background; var
+  background: var(--quinary-color);
 }
 
 main,
@@ -57,10 +68,45 @@ footer {
   text-align: center;
 }
 
-.color-theme {
-  float: right;
+.header-main {
+  color: var(--tertiary-color);
 }
 
-.header-main {
-    color: var(--ternary-color);
+.fa-bars {
+  color: var(--text-color-light);
+}
+
+.fa-lightbulb {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+#color-theme-btn {
+  float: right;
+  border-radius: 10px;
+  box-shadow: none;
+  background-color: var(--bg-color-light);
+  box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 1);
+
+  cursor: pointer;
+}
+
+#color-theme-slider {
+  position: absolute;
+  background-color: var(--color-theme-slider);
+
+  width: 27.5px;
+  height: 22.5px;
+  border-radius: 50%;
+
+  top: 19.5px;
+  right: 45px;
+
+  border: 1.5px solid var(--primary-color-light);
+
+  transition-duration: 250ms;
+}
+
+#main-bio {
+  width: 75%;
+  margin: auto;
 }
