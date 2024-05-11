@@ -62,7 +62,6 @@ footer {
   background: var(--quinary-color);
 }
 
-main,
 footer {
   text-align: center;
 }
@@ -72,7 +71,6 @@ footer {
 }
 
 #color-theme-btn {
-  float: right;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -91,11 +89,16 @@ footer {
 }
 
 #main-bio {
-  width: 85%;
+  width: 90%;
   margin: auto;
 }
 
 nav ul,
 #contact ul {
   list-style: none;
+}
+
+#contact ul {
+  display: flex;
+  justify-content: space-evenly;
 }
