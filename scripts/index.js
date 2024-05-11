@@ -2,6 +2,9 @@
 
 $("#color-theme-btn").click(colorThemeToggle);
 
+$(".fa-sun").css({ display: "none" });
+let currentTheme = "dark";
+
 function colorThemeToggle() {
   const $colorThemeBtn = $("#color-theme-btn");
   const $colorThemeSlider = $("#color-theme-slider");
@@ -10,5 +13,20 @@ function colorThemeToggle() {
     $colorThemeSlider.css("right", "45px");
   } else {
     $colorThemeSlider.css("right", "20.5px");
+  }
+
+  if (currentTheme === "dark") {
+    // Change to light
+    document.documentElement.style.setProperty("--bg-color", "#ffffff");
+    document.documentElement.style.setProperty("--text-color", "#000000");
+    $(".fa-moon").css({ display: "none" });
+    $(".fa-sun").css({ display: "block" });
+    currentTheme = "light";
+  } else {
+    document.documentElement.style.setProperty("--bg-color", "#000000");
+    document.documentElement.style.setProperty("--text-color", "#ffffff");
+    $(".fa-sun").css({ display: "none" });
+    $(".fa-moon").css({ display: "block" });
+    currentTheme = "dark";
   }
 }
