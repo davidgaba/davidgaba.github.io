@@ -36,7 +36,7 @@ html {
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: "Rubik", "Nobile";
+  font-family: "Nobile", "Rubik";
 }
 
 body {
@@ -87,6 +87,7 @@ header span,
 
 .header-main {
   color: var(--tertiary-color);
+  font-family: "Nobile";
 }
 
 #color-theme-btn {
@@ -94,7 +95,7 @@ header span,
   height: 30px;
   cursor: pointer;
   text-align: center;
-  background-color: var(--bg-color);
+  background-color: transparent;
   color: var(--text-color);
   border: none;
   border-radius: 5px;
@@ -108,21 +109,44 @@ header span,
   width: 90%;
   margin: auto;
   text-align: center;
+  font-family: "Rubik";
 }
 
 nav {
   display: none;
-  position: absolute;
-  right: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav ul {
+  width: 100vw;
   height: 100vh;
+  padding-top: 100px;
+  backdrop-filter: blur(10px);
 }
 
 nav ul,
 #contact ul {
   list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 30px;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+nav ul li a:hover {
+  position: relative;
+  font-weight: bolder;
+  transition: all 0.5s ease;
+  color: #964734;
 }
 
 #skills-container {
@@ -142,9 +166,23 @@ nav ul,
   justify-content: center;
   font-size: 0.7rem;
   border-radius: 10px;
+  font-family: "Nobile";
+}
+
+.skills-logo {
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+#contact {
+  margin-top: 50px;
 }
 
 #contact ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.contacts-logo {
+  height: 50px;
 }

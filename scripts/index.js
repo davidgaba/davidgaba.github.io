@@ -18,14 +18,21 @@ function colorThemeToggle() {
 
   if (currentTheme === "dark") {
     // Change to light
-    $("html").css({ "--bg-color": "#ffffff", "--text-color": "#000000" });
+    $("html").css({
+      "--bg-color": "#ffffff",
+      "--text-color": "#000000",
+      "--skills-bg-color": "#d8d8d883",
+    });
     $(".fa-moon").css({ display: "none" });
     $(".fa-sun").css({ display: "block" });
     currentTheme = "light";
   } else {
     // Change to dark
-    document.documentElement.style.setProperty("--bg-color", "#000000");
-    document.documentElement.style.setProperty("--text-color", "#ffffff");
+    $("html").css({
+      "--bg-color": "#000000",
+      "--text-color": "#ffffff",
+      "--skills-bg-color": "#46474783",
+    });
     $(".fa-sun").css({ display: "none" });
     $(".fa-moon").css({ display: "block" });
     currentTheme = "dark";
@@ -35,6 +42,15 @@ function colorThemeToggle() {
 const $menuBtn = $("#menu-btn");
 $menuBtn.click(menuToggle);
 
+let menuState = "closed";
+
 function menuToggle() {
   $("nav").toggle();
+
+  if (menuState === "closed") {
+    $("body").attr("disabled", "disabled");
+    menuState = "opened";
+  } else {
+    menuState = "closed";
+  }
 }
