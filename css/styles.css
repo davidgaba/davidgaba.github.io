@@ -118,13 +118,26 @@ nav {
   left: 0;
   top: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(56, 56, 56, 0.637);
+  backdrop-filter: blur(15px);
+}
+
+.fa-x {
+  position: absolute;
+  top: 25.5px;
+  right: 21px;
+  cursor: pointer;
+  color: white;
+}
+
+.fa-bars {
+  cursor: pointer;
 }
 
 nav ul {
   width: 100vw;
   height: 100vh;
   padding-top: 100px;
-  backdrop-filter: blur(10px);
 }
 
 nav ul,
@@ -138,15 +151,16 @@ nav ul li {
 
 nav ul li a:link,
 nav ul li a:visited {
-  padding: 10px;
+  padding: var(--default-padding);
   font-size: 1.5rem;
+  color: white;
 }
 
-nav ul li a:hover {
+.nav-item:hover {
   position: relative;
   font-weight: bolder;
   transition: all 0.5s ease;
-  color: #964734;
+  font-size: 2rem;
 }
 
 #skills-container {

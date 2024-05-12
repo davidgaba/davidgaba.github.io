@@ -25,6 +25,7 @@ function colorThemeToggle() {
     });
     $(".fa-moon").css({ display: "none" });
     $(".fa-sun").css({ display: "block" });
+    $("footer").css({ backgroundColor: "var(--quinary-color)" });
     currentTheme = "light";
   } else {
     // Change to dark
@@ -33,14 +34,17 @@ function colorThemeToggle() {
       "--text-color": "#ffffff",
       "--skills-bg-color": "#46474783",
     });
-    $(".fa-sun").css({ display: "none" });
     $(".fa-moon").css({ display: "block" });
+    $(".fa-sun").css({ display: "none" });
+    $("footer").css({ backgroundColor: "var(--tertiary-color)" });
     currentTheme = "dark";
   }
 }
 
 const $menuBtn = $("#menu-btn");
+const $closeBtn = $(".fa-x");
 $menuBtn.click(menuToggle);
+$closeBtn.click(menuToggle);
 
 let menuState = "closed";
 
