@@ -1,6 +1,7 @@
 "use strict";
 
-$("#color-theme-btn").click(colorThemeToggle);
+const colorThemeBtn = $("#color-theme-btn");
+colorThemeBtn.click(colorThemeToggle);
 
 $(".fa-sun").css({ display: "none" });
 let currentTheme = "dark";
@@ -17,16 +18,23 @@ function colorThemeToggle() {
 
   if (currentTheme === "dark") {
     // Change to light
-    document.documentElement.style.setProperty("--bg-color", "#ffffff");
-    document.documentElement.style.setProperty("--text-color", "#000000");
+    $("html").css({ "--bg-color": "#ffffff", "--text-color": "#000000" });
     $(".fa-moon").css({ display: "none" });
     $(".fa-sun").css({ display: "block" });
     currentTheme = "light";
   } else {
+    // Change to dark
     document.documentElement.style.setProperty("--bg-color", "#000000");
     document.documentElement.style.setProperty("--text-color", "#ffffff");
     $(".fa-sun").css({ display: "none" });
     $(".fa-moon").css({ display: "block" });
     currentTheme = "dark";
   }
+}
+
+const $menuBtn = $("#menu-btn");
+$menuBtn.click(menuToggle);
+
+function menuToggle() {
+  $("nav").toggle();
 }
