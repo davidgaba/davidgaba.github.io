@@ -163,6 +163,22 @@ nav ul li a:visited {
   font-size: 2rem;
 }
 
+.stat-vector {
+  width: 20px;
+}
+
+.stat-container,
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-text {
+  font-size: 0.7rem;
+  padding-left: 5px;
+}
+
 #skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
