@@ -1,5 +1,7 @@
 "use strict";
 
+$(".stat-vector").attr("fill", "#000000");
+
 const colorThemeBtn = $("#color-theme-btn");
 colorThemeBtn.click(colorThemeToggle);
 
@@ -26,6 +28,9 @@ function colorThemeToggle() {
     $(".fa-moon").css({ display: "none" });
     $(".fa-sun").css({ display: "block" });
     $("footer").css({ backgroundColor: "var(--quinary-color)" });
+    $(".stat-vector").css({ filter: "invert(0)" });
+    $(".stat-item").css({ backgroundColor: "#e2e2e2a2" });
+    $("#github-logo").css({ filter: "none" });
     currentTheme = "light";
   } else {
     // Change to dark
@@ -37,6 +42,9 @@ function colorThemeToggle() {
     $(".fa-moon").css({ display: "block" });
     $(".fa-sun").css({ display: "none" });
     $("footer").css({ backgroundColor: "var(--tertiary-color)" });
+    $(".stat-vector").css({ filter: "invert(1)" });
+    $(".stat-item").css({ backgroundColor: "#272727a2" });
+    $("#github-logo").css({ filter: "invert(1)" });
     currentTheme = "dark";
   }
 }
@@ -52,9 +60,12 @@ function menuToggle() {
   $("nav").toggle();
 
   if (menuState === "closed") {
-    $("body").attr("disabled", "disabled");
+    $("nav").css({ marginLeft: "0px" });
+    $("body").attr("disabled", "true");
     menuState = "opened";
   } else {
+    $("nav").css({ marginLeft: "-100lvw" });
+    $("body").attr("disabled", "false");
     menuState = "closed";
   }
 }
